@@ -22,14 +22,14 @@ after_success:
   - docker push jr17/multi-server
   - docker push jr17/multi-worker
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "eu-central-1"
-#   app: "docker-react"
-#   env: "DockerReact-env-1"
-#   bucket_name: "elasticbeanstalk-eu-central-1-882242622157"
-#   bucket_path: "docker-react"
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-882242622157"
+  bucket_path: "multi-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
